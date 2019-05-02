@@ -45,7 +45,11 @@ public class MyRestaurantRecyclerViewAdapter extends RecyclerView.Adapter<MyRest
         //holder.ivPhoto.set(mValues.get(position).getUrlPhoto());
 
 
-        Picasso.get().load(mValues.get(position).getUrlPhoto()).into( holder.ivPhoto );
+        Picasso.get()
+                .load(mValues.get(position).getUrlPhoto())
+                .resize(400, 150)
+                .centerCrop()
+                .into( holder.ivPhoto );
 
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
